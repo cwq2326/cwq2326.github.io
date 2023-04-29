@@ -50,8 +50,8 @@ export default function index() {
           }}
         >
           <Typography
-            variant="span"
             sx={{
+              display: "inline-block",
               fontSize: {
                 xs: "2rem",
                 md: "3rem",

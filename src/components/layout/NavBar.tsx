@@ -16,7 +16,9 @@ export default function NavBar() {
 
   React.useEffect(() => {
     window.addEventListener("resize", (e) => {
-      setWidth(e.target.window.innerWidth);
+      if (e.target instanceof Window) {
+        setWidth(e.target.window.innerWidth)
+      }
     });
 
     return () => {};
