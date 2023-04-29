@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.node {
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: orange;
+  border-radius: 50%;
+  position: relative;
+}
+
+.node:hover {
+  transform: scale(1.1);
+}
+
+.node_right::before {
+  position: absolute;
+  background-color: orange;
+  width: 5rem;
+  height: 0.25rem;
+  display: block;
+  content: "";
+  left: 50%;
+  top: calc(50% - 0.125rem);
+  z-index: 1;
+}
+
+.node_right::after {
+  position: absolute;
+  background-color: orange;
+  width: 5rem;
+  height: 0.25rem;
+  display: block;
+  content: "";
+  left: 100%;
+  top: calc(50% - 0.125rem);
+  z-index: 1;
+}
+
+.node_left::before {
+  position: absolute;
+  background-color: orange;
+  width: 5rem;
+  height: 0.25rem;
+  display: block;
+  content: "";
+  right: 50%;
+  top: calc(50% - 0.125rem);
+  z-index: 1;
+}
+
+.bar {
+  height: 2rem;
+  width: 0.25rem;
+  background-color: orange;
+}
