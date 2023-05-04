@@ -109,6 +109,10 @@ const skills: Skills = {
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
     },
     {
+      name: 'Java',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+    },
+    {
       name: 'GoLang',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg',
     },
@@ -161,6 +165,14 @@ const skills: Skills = {
     {
       name: 'Redis',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg',
+    },
+    {
+      name: 'VS Code',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
+    },
+    {
+      name: 'Vite',
+      icon: '/vite.svg'
     },
   ],
   cloud: [
