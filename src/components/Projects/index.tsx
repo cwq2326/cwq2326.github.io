@@ -1,8 +1,9 @@
 import { Box } from "@mui/material";
-import Section from "../Layouts/Section";
-import ProjectCard from "./ProjectCard";
-import { projects } from "./../../data";
+
 import { Project } from "../../types";
+import Section from "../Layouts/Section";
+import { projects } from "./../../data";
+import ProjectCard from "./ProjectCard";
 
 export default function index() {
   return (

@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React, { ReactNode } from "react";
+
 import UseScrollIntoView from "../../hooks/UseScrollIntoView";
 
 type SectionProps = {

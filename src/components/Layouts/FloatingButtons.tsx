@@ -1,4 +1,5 @@
-import { Box, IconButton, Avatar } from "@mui/material";
+import { Avatar, Box, IconButton } from "@mui/material";
+
 import { socials } from "../../data";
 
 export default function FloatingButtons() {

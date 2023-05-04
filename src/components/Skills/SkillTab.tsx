@@ -1,4 +1,5 @@
 import { CardContent, Divider, Stack, Typography } from "@mui/material";
+
 import SkillChip from "./SkillChip";
 
 type SkillTabProps = {

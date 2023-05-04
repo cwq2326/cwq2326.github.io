@@ -1,4 +1,5 @@
 import { Project, Skills, Social } from "./types";
+
 // This file contains data to be used for various sections.
 
 // ========================================================

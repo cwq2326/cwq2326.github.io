@@ -1,5 +1,5 @@
-import { Box, Divider, Typography } from "@mui/material";
 import WavingHandIcon from "@mui/icons-material/WavingHand";
+import { Box, Divider, Typography } from "@mui/material";
 
 export default function index() {
   return (

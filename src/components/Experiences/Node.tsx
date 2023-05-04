@@ -1,4 +1,5 @@
 import { Box, Stack, Typography } from "@mui/material";
+
 import { experiences } from "./data";
 
 function LeftNode(props: any) {

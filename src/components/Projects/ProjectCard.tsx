@@ -1,4 +1,4 @@
-import React from "react";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import {
   Box,
   Button,
@@ -8,7 +8,8 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import React from "react";
+
 import UseScrollIntoView from "../../hooks/UseScrollIntoView";
 import { Project } from "../../types";
 
