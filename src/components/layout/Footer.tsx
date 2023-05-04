@@ -1,17 +1,5 @@
 import { Box, IconButton, Avatar } from "@mui/material";
-
-const socials = [
-  {
-    name: "GitHub",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-    link: "https://github.com/cwq2326",
-  },
-  {
-    name: "Linkedin",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg",
-    link: "https://linkedin.com/in/chuawenquan",
-  },
-];
+import { socials } from "../../data";
 
 export default function Footer() {
   return (
@@ -25,8 +13,8 @@ export default function Footer() {
         gap: "1rem",
       }}
     >
-      {socials.map((el) => (
-        <IconButton target="__blank" href={el.link}>
+      {socials.map((el, idx: number) => (
+        <IconButton target="__blank" href={el.link} key={idx}>
           <Avatar src={el.icon} variant="square" />
         </IconButton>
       ))}

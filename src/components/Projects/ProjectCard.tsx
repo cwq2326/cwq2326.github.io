@@ -1,96 +1,123 @@
-import { useState } from "react";
+import React from "react";
 import {
+  Box,
   Button,
   Card,
-  CardActions,
   CardContent,
-  CardMedia,
   Chip,
   Divider,
-  Link,
   Typography,
 } from "@mui/material";
-import FlipCameraAndroidIcon from "@mui/icons-material/FlipCameraAndroid";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 export default function ProjectCard(props: any) {
-  const [frontFocus, setFrontFocus] = useState<boolean>(true);
+  const cardRef = React.useRef(null);
+  const [doAnimate, setDoAnimate] = React.useState<boolean>(false);
+
+  const callbackFunction = (entries: any) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) setDoAnimate(true);
+  };
+
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0,
+  };
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options);
+    if (cardRef.current) observer.observe(cardRef.current);
+  }, []);
 
   return (
-    <>
-      <Card
-        sx={{
-          width: {
-            xs: "80%",
-            sm: "45%",
-            md: "40%",
-            lg: "30%",
+    <Card
+      ref={cardRef}
+      sx={{
+        width: {
+          md: "calc(50% - .5rem)",
+          lg: "calc(33% - .6rem)",
+        },
+        position: "relative",
+        backgroundColor: "#EDF5E1",
+        color: "#2d3032",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        opacity: 0,
+        "&:hover": {
+          transform: "translate(-.5rem, -.5rem)",
+          boxShadow: ".3rem .3rem 10px grey",
+        },
+        "@keyframes grow": {
+          from: {
+            scale: 0,
           },
-          position: "relative",
-          backgroundColor: "#EDF5E1",
-          border: "black solid .1rem",
-          color: "#2d3032",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-        }}
-      >
-        <CardContent>
-          <CardMedia image="/vite.svg" sx={{ height: "15rem" }} />
-          <Typography
-            variant="h2"
-            sx={{
-              py: ".5rem",
-              fontSize: "1.4rem",
-            }}
-          >
-            {props.title}
-          </Typography>
-          <Typography sx={{ fontStyle: "italic", paddingBottom: "1rem" }}>
-            {props.shortDescription}
-          </Typography>
-          <Divider sx={{ bgcolor: "#d2d3d3" }} />
-        </CardContent>
-        <CardActions sx={{ justifyContent: "space-between" }}>
-          <Button onClick={() => setFrontFocus((x) => !x)}>
-            <FlipCameraAndroidIcon sx={{ color: "primary.contrastText" }} />
-          </Button>
-          <Button href={props.repo} target="__blank">
-            <GitHubIcon sx={{ color: "primary.contrastText" }} />
-          </Button>
-        </CardActions>
-        <Card
+          to: {
+            opacity: 1,
+            scale: 1,
+          },
+        },
+        animation: `${
+          doAnimate ? `.5s ${props.idx * 100}ms grow forwards ` : ""
+        }`,
+      }}
+    >
+      <CardContent>
+        <Typography
+          variant="h3"
           sx={{
-            width: "100%",
-            height: "85%",
-            position: "absolute",
-            bgcolor: "primary.main",
-            color: "primary.contrastText",
-            top: 0,
-            zIndex: `${!frontFocus ? 1 : -1}`,
-            overflow: "auto",
+            fontSize: "1.2rem",
           }}
         >
-          <CardContent>
-            <Typography paragraph>{props.description}</Typography>
-            <Typography>{props.date}</Typography>
-            <Divider sx={{ bgcolor: "#2D3032", my: ".5rem" }} />
-            {props.techStack.map((el: string) => (
-              <Chip
-                label={el}
-                sx={[
-                  { mr: ".2rem", mt: ".2rem", color: "primary.contrastText" },
-                  {
-                    "&:hover": {
-                      transform: "scale(1.05)",
-                    },
-                  },
-                ]}
-              />
-            ))}
-          </CardContent>
-        </Card>
-      </Card>
-    </>
+          {props.title}
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: " space-between",
+          }}
+        >
+          <Typography
+            variant="subtitle1"
+            sx={{ fontStyle: "italic", fontSize: ".9rem" }}
+          >
+            {props.date}
+          </Typography>
+          <Button href={props.repo} target="__blank">
+            <GitHubIcon sx={{ color: "primary.contrastText", ml: "auto" }} />
+          </Button>
+        </Box>
+        <Divider sx={{ bgcolor: "#d2d3d3" }} />
+        <Typography
+          variant="body1"
+          sx={{ mt: ".5rem", fontSize: ".9rem" }}
+          gutterBottom
+        >
+          {props.description}
+        </Typography>
+        {props.techStack.map((el: string, idx: number) => (
+          <Chip
+            key={idx}
+            label={el}
+            size="small"
+            sx={[
+              {
+                mr: ".2rem",
+                mt: ".2rem",
+                color: "primary.contrastText",
+                fontSize: ".7rem",
+              },
+              {
+                "&:hover": {
+                  transform: "scale(1.05)",
+                },
+              },
+            ]}
+          />
+        ))}
+      </CardContent>
+    </Card>
   );
 }

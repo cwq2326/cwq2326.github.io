@@ -1,14 +1,31 @@
-import { Box, ThemeProvider, createTheme } from "@mui/material";
+import {
+  Box,
+  Divider,
+  ThemeProvider,
+  createTheme,
+  responsiveFontSizes,
+} from "@mui/material";
 import NavBar from "./components/layout/NavBar";
+import FloatingButtons from "./components/layout/FloatingButtons";
 import Hero from "./components/Hero";
 import About from "./components/About/index";
-import Experiences from "./components/Experiences/index";
 import Skills from "./components/Skills/index";
 import Projects from "./components/Projects";
-import Contact from "./components/Contact";
 import Footer from "./components/layout/Footer";
 
-const theme = createTheme({
+let theme = createTheme({
+  typography: {
+    fontFamily: ["Montserrat", "sans-serif"].join(","),
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 576,
+      md: 768,
+      lg: 1200,
+      xl: 1500,
+    },
+  },
   palette: {
     primary: {
       main: "#fafaff",
@@ -28,6 +45,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <NavBar />
+        <FloatingButtons />
         <Hero />
         <Box
           sx={{
@@ -35,16 +53,16 @@ function App() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            width: "100vw",
+            width: "100%",
             bgcolor: "secondary.main",
             py: "1rem",
           }}
         >
           <About />
-          {/* <Experiences /> */}
+          <Divider flexItem sx={{ width: "80%", alignSelf: "center" }} />
           <Projects />
+          <Divider flexItem sx={{ width: "80%", alignSelf: "center" }} />
           <Skills />
-          {/* <Contact /> */}
         </Box>
         <Footer />
       </div>

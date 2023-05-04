@@ -1,18 +1,17 @@
 import { Card, Divider } from "@mui/material";
 
-import { skills } from "./data";
+import { skills } from "./../../data";
 import Section from "../layout/Section";
 import SkillTab from "./SkillTab";
 
 export default function index() {
   return (
-    <Section title="Skills" id="skills">
+    <Section title="SKILLS" id="skills">
       <Card
         sx={{
           bgcolor: "text.primary",
-          boxShadow: "none",
+
           color: "primary.contrastText",
-          border: "solid black 2px",
         }}
       >
         <SkillTab

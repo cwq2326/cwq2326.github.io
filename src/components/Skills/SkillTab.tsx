@@ -15,11 +15,11 @@ const SkillTab = (props: any) => {
       }}
     >
       <Typography
-        variant="h6"
+        variant="h3"
         sx={{
           lineHeight: "normal",
-          width: { md: "5rem" },
-          fontSize: { sm: "1.5rem", md: "1rem" },
+          width: { md: "6rem" },
+          fontSize: { xs: "1.2rem", md: "1.1rem" },
           paddingBottom: { xs: "1rem", md: "0" },
         }}
       >
@@ -28,10 +28,10 @@ const SkillTab = (props: any) => {
       <Stack
         direction="row"
         spacing={0}
-        sx={{ width: { sm: "80%" }, flexWrap: "wrap", ml: { md: 3 } }}
+        sx={{ width: { sm: "80%" }, flexWrap: "wrap", ml: { md: 5 } }}
       >
-        {props.skill.map((element: any) => (
-          <SkillChip name={element.name} icon={element.icon} />
+        {props.skill.map((el: any, idx: number) => (
+          <SkillChip name={el.name} icon={el.icon} key={idx} idx={idx}/>
         ))}
       </Stack>
     </CardContent>
