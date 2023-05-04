@@ -25,7 +25,7 @@ export default function NavBar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <BasicModal isOpen={isMenuOpen} setisMenuOpen={setisMenuOpen} />
+      <BasicModal isOpen={isMenuOpen} setIsMenuOpen={setisMenuOpen} />
       <AppBar position="fixed" sx={{ bgcolor: "primary.main" }}>
         <Toolbar
           sx={{

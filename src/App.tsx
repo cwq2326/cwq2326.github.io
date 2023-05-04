@@ -1,16 +1,11 @@
-import {
-  Box,
-  Divider,
-  ThemeProvider,
-  createTheme,
-} from "@mui/material";
-import NavBar from "./components/layout/NavBar";
-import FloatingButtons from "./components/layout/FloatingButtons";
+import { Box, Divider, ThemeProvider, createTheme } from "@mui/material";
+import NavBar from "./components/Layouts/NavBar";
+import FloatingButtons from "./components/Layouts/FloatingButtons";
 import Hero from "./components/Hero";
 import About from "./components/About/index";
 import Skills from "./components/Skills/index";
 import Projects from "./components/Projects";
-import Footer from "./components/layout/Footer";
+import Footer from "./components/Layouts/Footer";
 
 let theme = createTheme({
   typography: {

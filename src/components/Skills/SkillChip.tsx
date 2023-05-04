@@ -1,6 +1,7 @@
 import { Avatar, Chip } from "@mui/material";
 import React from "react";
 import UseScrollIntoView from "../../hooks/UseScrollIntoView";
+
 type SkillChipProps = {
   name: string;
   icon?: string;
@@ -8,12 +9,12 @@ type SkillChipProps = {
 };
 
 const SkillChip = (props: SkillChipProps) => {
-  const chipRef = React.useRef(null);
- let doAnimate = UseScrollIntoView(chipRef) 
-  
+  const chipRef = React.useRef<HTMLDivElement | null>(null);
+  let doAnimate = UseScrollIntoView(chipRef);
+
   return (
     <Chip
-    ref={chipRef}
+      ref={chipRef}
       label={props.name}
       variant="outlined"
       avatar={<Avatar src={props.icon} />}
@@ -32,10 +33,12 @@ const SkillChip = (props: SkillChipProps) => {
           },
           to: {
             opacity: 1,
-            scale: 1
-          }
+            scale: 1,
+          },
         },
-        animation: `${doAnimate ? `.5s ${props.idx * 100}ms grow forwards`: ""}`
+        animation: `${
+          doAnimate ? `.5s ${props.idx * 100}ms grow forwards` : ""
+        }`,
       }}
     />
   );

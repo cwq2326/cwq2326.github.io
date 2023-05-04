@@ -1,5 +1,5 @@
 import { Box, FormControl, TextField } from "@mui/material";
-import Section from "../layout/Section";
+import Section from "../Layouts/Section";
 
 // Customised styling for Form components.
 const formControlStyle = {

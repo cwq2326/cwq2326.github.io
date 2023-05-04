@@ -1,9 +1,15 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { ReactNode } from "react";
 import UseScrollIntoView from "../../hooks/UseScrollIntoView";
 
-export default function Section(props: any) {
-  const sectionTitleRef = React.useRef(null);
+type SectionProps = {
+  id?: string;
+  title: string;
+  children?: ReactNode;
+};
+
+export default function Section(props: SectionProps) {
+  const sectionTitleRef = React.useRef<HTMLDivElement | null>(null);
   let doAnimate = UseScrollIntoView(sectionTitleRef);
 
   return (

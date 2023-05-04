@@ -1,7 +1,9 @@
 import React from "react";
 
-export default function UseScrollIntoView(elementRef: React.RefObject<HTMLElement>): boolean {
-    const [doAnimation, setDoAnimation] = React.useState<boolean>(false);
+export default function UseScrollIntoView(
+  elementRef: React.RefObject<HTMLElement>
+): boolean {
+  const [doAnimation, setDoAnimation] = React.useState<boolean>(false);
 
   const callbackFunction = (entries: any) => {
     const [entry] = entries;

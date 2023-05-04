@@ -1,7 +1,15 @@
 import { CardContent, Divider, Stack, Typography } from "@mui/material";
 import SkillChip from "./SkillChip";
 
-const SkillTab = (props: any) => {
+type SkillTabProps = {
+  name: string;
+  skill: {
+    name: string;
+    icon: string;
+  }[];
+};
+
+const SkillTab = (props: SkillTabProps) => {
   return (
     <CardContent
       sx={{
@@ -31,7 +39,7 @@ const SkillTab = (props: any) => {
         sx={{ width: { sm: "80%" }, flexWrap: "wrap", ml: { md: 5 } }}
       >
         {props.skill.map((el: any, idx: number) => (
-          <SkillChip name={el.name} icon={el.icon} key={idx} idx={idx}/>
+          <SkillChip name={el.name} icon={el.icon} key={idx} idx={idx} />
         ))}
       </Stack>
     </CardContent>

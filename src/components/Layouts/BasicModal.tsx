@@ -3,16 +3,21 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Divider, Stack } from "@mui/material";
 
-export default function BasicModal(props: any) {
+type BasicModalProps = {
+  isOpen: boolean;
+  setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function BasicModal(props: BasicModalProps) {
   function handleClick(id: string) {
-    props.setisMenuOpen(false);
+    props.setIsMenuOpen(false);
     window.location.href = id;
   }
   return (
     <div>
       <Modal
         open={props.isOpen}
-        onClose={() => props.setisMenuOpen(false)}
+        onClose={() => props.setIsMenuOpen(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >

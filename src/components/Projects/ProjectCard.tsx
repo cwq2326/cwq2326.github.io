@@ -10,11 +10,16 @@ import {
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import UseScrollIntoView from "../../hooks/UseScrollIntoView";
+import { Project } from "../../types";
 
-export default function ProjectCard(props: any) {
-  const cardRef = React.useRef(null);
-  let doAnimate = UseScrollIntoView(cardRef)
-  
+type ProjectCardProps = {
+  idx: number;
+} & Project;
+
+export default function ProjectCard(props: ProjectCardProps) {
+  const cardRef = React.useRef<HTMLDivElement | null>(null);
+  let doAnimate = UseScrollIntoView(cardRef);
+
   return (
     <Card
       ref={cardRef}
@@ -44,7 +49,7 @@ export default function ProjectCard(props: any) {
           },
         },
         animation: `${
-          doAnimate ? `.5s ${props.idx * 100}ms grow forwards ` : ""
+          doAnimate ? `.5s ${(props.idx % 3) * 100}ms grow forwards ` : ""
         }`,
       }}
     >
@@ -55,7 +60,7 @@ export default function ProjectCard(props: any) {
             fontSize: "1.2rem",
           }}
         >
-          {props.title}
+          {props.name}
         </Typography>
         <Box
           sx={{

@@ -1,7 +1,8 @@
 import { Box } from "@mui/material";
-import Section from "../layout/Section";
+import Section from "../Layouts/Section";
 import ProjectCard from "./ProjectCard";
 import { projects } from "./../../data";
+import { Project } from "../../types";
 
 export default function index() {
   return (
@@ -14,10 +15,10 @@ export default function index() {
           justifyContent: { xs: "center", md: "space-between" },
         }}
       >
-        {projects.map((el, idx: number) => (
+        {projects.map((el: Project, idx: number) => (
           <ProjectCard
             key={idx}
-            title={el.name}
+            name={el.name}
             shortDescription={el.shortDescription}
             description={el.description}
             techStack={el.techStack}

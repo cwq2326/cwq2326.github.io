@@ -1,4 +1,4 @@
-import Section from "../layout/Section";
+import Section from "../Layouts/Section";
 import Node from "./Node";
 
 export default function index() {

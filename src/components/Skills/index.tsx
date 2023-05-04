@@ -1,7 +1,7 @@
 import { Card, Divider } from "@mui/material";
 
 import { skills } from "./../../data";
-import Section from "../layout/Section";
+import Section from "../Layouts/Section";
 import SkillTab from "./SkillTab";
 
 export default function index() {

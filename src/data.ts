@@ -1,10 +1,11 @@
+import { Project, Skills, Social } from "./types";
 // This file contains data to be used for various sections.
 
 // ========================================================
 //                      About Section
 // ========================================================
 
-const introduction = [
+const introduction: string[] = [
   "Welcome to my personal website! My name is Wen Quan and I am currently a penultimate Computer Science undergraduate at National University of Singapore (NUS), and am expecting to graduating this coming December 2023. I am interested in the field of software engineering, particularly application development, and have also chosen it to be part of my degree focus area. I aspire to become a fullstack developer after I graduate, focusing on building robust and scalable applications.",
   "Previously I graduated with a diploma in Applied Chemistry from Singapore Polytechnic, and I decided to pivot into the field of Computer Science as I was curious on how computer works and how they can be used to solve real world issues. I also love the idea of building software and watching it come to life, and building something that can potentially make a positive impact on society ",
   "I am always on the move to learn new technologies and improve my knowledge in the field of software engineering.\n Once again, thanks for visting my website!",
@@ -14,7 +15,7 @@ const introduction = [
 //                      Projects Section
 // ========================================================
 
-const projects = [
+const projects: Project[] = [
   {
     name: "Personal Website",
     shortDescription: "Web app for personal website",
@@ -87,7 +88,7 @@ const projects = [
 //                      Skills Section
 // ========================================================
 
-const skills = {
+const skills: Skills = {
   programmingLanguages: [
     {
       name: "JavaScript",
@@ -178,7 +179,7 @@ const skills = {
 //                      Footer Section
 // ========================================================
 
-const socials = [
+const socials: Social[] = [
   {
     name: "GitHub",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
