@@ -6,8 +6,9 @@ export default function index() {
     <Box
       sx={{
         mx: "auto",
-        mb: {
-          xs: "-6rem",
+        mt: {
+          xs: "-5rem",
+          sm: "0",
         },
         display: "flex",
         alignItems: "center",

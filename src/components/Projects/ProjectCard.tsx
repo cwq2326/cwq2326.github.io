@@ -49,9 +49,17 @@ export default function ProjectCard(props: ProjectCardProps) {
             scale: 1,
           },
         },
-        animation: `${
-          doAnimate ? `.5s ${(props.idx % 3) * 100}ms grow forwards ` : ""
-        }`,
+        animation: {
+          xs: `${
+            doAnimate ? `.5s grow forwards ` : ""
+          }`,
+          md: `${
+            doAnimate ? `.5s ${(props.idx % 2) * 100}ms grow forwards ` : ""
+          }`,
+          lg: `${
+            doAnimate ? `.5s ${(props.idx % 3) * 100}ms grow forwards ` : ""
+          }`,
+        },
       }}
     >
       <CardContent>
