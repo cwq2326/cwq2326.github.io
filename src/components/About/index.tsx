@@ -1,6 +1,6 @@
-import Section from "../Layouts/Section";
-import { introduction } from "./../../data";
-import Paragraph from "./Paragraph";
+import Section from '../Layouts/Section';
+import { introduction } from './../../data';
+import Paragraph from './Paragraph';
 
 export default function index() {
   return (

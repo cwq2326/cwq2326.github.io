@@ -1,44 +1,44 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from '@mui/material';
 
-import { experiences } from "./data";
+import { experiences } from './data';
 
 function LeftNode(props: any) {
   return (
-    <Box sx={{ width: "40rem", border: "solid purple 2px" }}>
+    <Box sx={{ width: '40rem', border: 'solid purple 2px' }}>
       <Box
         sx={{
-          display: "flex",
-          justifyContent: "flex-end",
-          alignItems: "center",
-          width: "53%",
-          mr: "10rem",
-          border: "red solid 2px",
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+          width: '53%',
+          mr: '10rem',
+          border: 'red solid 2px',
         }}
       >
         <Box
           sx={{
-            height: "4rem",
-            border: "orange solid 2px",
-            position: "static",
+            height: '4rem',
+            border: 'orange solid 2px',
+            position: 'static',
           }}
         >
-          <Stack alignItems={"center"}>
-            <Typography fontSize={"1rem"} variant="subtitle1">
+          <Stack alignItems={'center'}>
+            <Typography fontSize={'1rem'} variant="subtitle1">
               {props.company}
             </Typography>
-            <Typography fontSize={".5rem"} variant="body1">
+            <Typography fontSize={'.5rem'} variant="body1">
               {props.title}
             </Typography>
           </Stack>
         </Box>
 
-        <Box sx={{ bgcolor: "orange", height: ".5rem", width: "6rem" }}></Box>
+        <Box sx={{ bgcolor: 'orange', height: '.5rem', width: '6rem' }}></Box>
         <Box
           sx={{
-            bgcolor: "orange",
-            height: "3rem",
-            minWidth: "3rem",
-            borderRadius: "50%",
+            bgcolor: 'orange',
+            height: '3rem',
+            minWidth: '3rem',
+            borderRadius: '50%',
           }}
         ></Box>
       </Box>
@@ -48,25 +48,25 @@ function LeftNode(props: any) {
 
 function RightNode(props: any) {
   return (
-    <Box sx={{ width: "40rem" }}>
+    <Box sx={{ width: '40rem' }}>
       <Box
-        sx={{ display: "flex", alignItems: "center", width: "53%", ml: "46%" }}
+        sx={{ display: 'flex', alignItems: 'center', width: '53%', ml: '46%' }}
       >
         <Box
           sx={{
-            bgcolor: "#d99058",
-            height: "3rem",
-            minWidth: "3rem",
-            borderRadius: "50%",
+            bgcolor: '#d99058',
+            height: '3rem',
+            minWidth: '3rem',
+            borderRadius: '50%',
           }}
         ></Box>
-        <Box sx={{ bgcolor: "#d99058", height: ".5rem", width: "6rem" }}></Box>
-        <Box sx={{ height: "4rem", border: "#d99058 solid 2px" }}>
-          <Stack alignItems={"center"}>
-            <Typography fontSize={"1rem"} variant="subtitle1">
+        <Box sx={{ bgcolor: '#d99058', height: '.5rem', width: '6rem' }}></Box>
+        <Box sx={{ height: '4rem', border: '#d99058 solid 2px' }}>
+          <Stack alignItems={'center'}>
+            <Typography fontSize={'1rem'} variant="subtitle1">
               {props.company}
             </Typography>
-            <Typography fontSize={".5rem"} variant="body1">
+            <Typography fontSize={'.5rem'} variant="body1">
               {props.title}
             </Typography>
           </Stack>
@@ -78,7 +78,7 @@ function RightNode(props: any) {
 
 function Connector() {
   return (
-    <Box sx={{ height: "3rem", width: ".5rem", bgcolor: "orangered" }}></Box>
+    <Box sx={{ height: '3rem', width: '.5rem', bgcolor: 'orangered' }}></Box>
   );
 }
 
@@ -86,10 +86,10 @@ export default function Nodes() {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        padding: "2rem 0",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        padding: '2rem 0',
       }}
     >
       {experiences.map((el, idx) => {

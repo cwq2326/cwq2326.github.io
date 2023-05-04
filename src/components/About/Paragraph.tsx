@@ -1,7 +1,7 @@
-import { Typography } from "@mui/material";
-import React from "react";
+import { Typography } from '@mui/material';
+import React from 'react';
 
-import UseScrollIntoView from "../../hooks/UseScrollIntoView";
+import UseScrollIntoView from '../../hooks/UseScrollIntoView';
 
 type ParagraphProps = {
   text: string;
@@ -20,22 +20,22 @@ export default function Paragraph(props: ParagraphProps) {
         ref={paragraphRef}
         sx={{
           fontSize: {
-            sm: "1rem",
-            md: "1.1rem",
-            lg: "1.2rem",
+            sm: '1rem',
+            md: '1.1rem',
+            lg: '1.2rem',
           },
           opacity: 0,
-          "@keyframes slideUp": {
+          '@keyframes slideUp': {
             from: {
-              transform: "translateY(50%)",
+              transform: 'translateY(50%)',
               opacity: 0,
             },
             to: {
-              transform: "translateY(0)",
+              transform: 'translateY(0)',
               opacity: 1,
             },
           },
-          animation: `${doAnimate ? `.5s .5s slideUp forwards` : ""}`,
+          animation: `${doAnimate ? `.5s .5s slideUp forwards` : ''}`,
         }}
       >
         {props.text}

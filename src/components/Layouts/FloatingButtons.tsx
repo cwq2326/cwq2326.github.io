@@ -1,20 +1,20 @@
-import { Avatar, Box, IconButton } from "@mui/material";
+import { Avatar, Box, IconButton } from '@mui/material';
 
-import { socials } from "../../data";
+import { socials } from '../../data';
 
 export default function FloatingButtons() {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        bgcolor: "rgba(0,0,0,0%)",
-        position: "fixed",
-        bottom: "10%",
-        left: "1%",
+        display: 'flex',
+        flexDirection: 'column',
+        bgcolor: 'rgba(0,0,0,0%)',
+        position: 'fixed',
+        bottom: '10%',
+        left: '1%',
         visibility: {
-          xs: "hidden",
-          sm: "visible",
+          xs: 'hidden',
+          sm: 'visible',
         },
       }}
     >
@@ -23,7 +23,7 @@ export default function FloatingButtons() {
           <Avatar
             src={el.icon}
             variant="square"
-            sx={{ height: "2rem", width: "2rem" }}
+            sx={{ height: '2rem', width: '2rem' }}
           />
         </IconButton>
       ))}

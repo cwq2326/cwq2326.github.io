@@ -1,5 +1,5 @@
-import Section from "../Layouts/Section";
-import Node from "./Node";
+import Section from '../Layouts/Section';
+import Node from './Node';
 
 export default function index() {
   return (

@@ -1,4 +1,4 @@
-import GitHubIcon from "@mui/icons-material/GitHub";
+import GitHubIcon from '@mui/icons-material/GitHub';
 import {
   Box,
   Button,
@@ -7,11 +7,11 @@ import {
   Chip,
   Divider,
   Typography,
-} from "@mui/material";
-import React from "react";
+} from '@mui/material';
+import React from 'react';
 
-import UseScrollIntoView from "../../hooks/UseScrollIntoView";
-import { Project } from "../../types";
+import UseScrollIntoView from '../../hooks/UseScrollIntoView';
+import { Project } from '../../types';
 
 type ProjectCardProps = {
   idx: number;
@@ -26,21 +26,21 @@ export default function ProjectCard(props: ProjectCardProps) {
       ref={cardRef}
       sx={{
         width: {
-          md: "calc(50% - .5rem)",
-          lg: "calc(33% - .6rem)",
+          md: 'calc(50% - .5rem)',
+          lg: 'calc(33% - .6rem)',
         },
-        position: "relative",
-        backgroundColor: "#EDF5E1",
-        color: "#2d3032",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
+        position: 'relative',
+        backgroundColor: '#EDF5E1',
+        color: '#2d3032',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
         opacity: 0,
-        "&:hover": {
-          transform: "translate(-.5rem, -.5rem)",
-          boxShadow: ".3rem .3rem 10px grey",
+        '&:hover': {
+          transform: 'translate(-.5rem, -.5rem)',
+          boxShadow: '.3rem .3rem 10px grey',
         },
-        "@keyframes grow": {
+        '@keyframes grow': {
           from: {
             scale: 0,
           },
@@ -50,14 +50,12 @@ export default function ProjectCard(props: ProjectCardProps) {
           },
         },
         animation: {
-          xs: `${
-            doAnimate ? `.5s grow forwards ` : ""
-          }`,
+          xs: `${doAnimate ? `.5s grow forwards ` : ''}`,
           md: `${
-            doAnimate ? `.5s ${(props.idx % 2) * 100}ms grow forwards ` : ""
+            doAnimate ? `.5s ${(props.idx % 2) * 100}ms grow forwards ` : ''
           }`,
           lg: `${
-            doAnimate ? `.5s ${(props.idx % 3) * 100}ms grow forwards ` : ""
+            doAnimate ? `.5s ${(props.idx % 3) * 100}ms grow forwards ` : ''
           }`,
         },
       }}
@@ -67,35 +65,35 @@ export default function ProjectCard(props: ProjectCardProps) {
           variant="h3"
           sx={{
             fontSize: {
-              xs: "1.2rem",
-              md: "1.25rem",
-              lg: "1.4rem"
-            }
+              xs: '1.2rem',
+              md: '1.25rem',
+              lg: '1.4rem',
+            },
           }}
         >
           {props.name}
         </Typography>
         <Box
           sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: " space-between",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: ' space-between',
           }}
         >
           <Typography
             variant="subtitle1"
-            sx={{ fontStyle: "italic", fontSize: ".9rem" }}
+            sx={{ fontStyle: 'italic', fontSize: '.9rem' }}
           >
             {props.date}
           </Typography>
           <Button href={props.repo} target="__blank">
-            <GitHubIcon sx={{ color: "primary.contrastText", ml: "auto" }} />
+            <GitHubIcon sx={{ color: 'primary.contrastText', ml: 'auto' }} />
           </Button>
         </Box>
-        <Divider sx={{ bgcolor: "#d2d3d3" }} />
+        <Divider sx={{ bgcolor: '#d2d3d3' }} />
         <Typography
           variant="body1"
-          sx={{ mt: ".5rem", fontSize: ".9rem" }}
+          sx={{ mt: '.5rem', fontSize: '.9rem' }}
           gutterBottom
         >
           {props.description}
@@ -107,14 +105,14 @@ export default function ProjectCard(props: ProjectCardProps) {
             size="small"
             sx={[
               {
-                mr: ".2rem",
-                mt: ".2rem",
-                color: "primary.contrastText",
-                fontSize: ".7rem",
+                mr: '.2rem',
+                mt: '.2rem',
+                color: 'primary.contrastText',
+                fontSize: '.7rem',
               },
               {
-                "&:hover": {
-                  transform: "scale(1.05)",
+                '&:hover': {
+                  transform: 'scale(1.05)',
                 },
               },
             ]}

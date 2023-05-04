@@ -1,7 +1,7 @@
-import { Avatar, Chip } from "@mui/material";
-import React from "react";
+import { Avatar, Chip } from '@mui/material';
+import React from 'react';
 
-import UseScrollIntoView from "../../hooks/UseScrollIntoView";
+import UseScrollIntoView from '../../hooks/UseScrollIntoView';
 
 type SkillChipProps = {
   name: string;
@@ -22,12 +22,12 @@ const SkillChip = (props: SkillChipProps) => {
       sx={{
         opacity: 0,
         m: 1,
-        bgcolor: "#fff",
-        color: "primary.contrastText",
-        "&:hover": {
-          transform: "scale(1.1)",
+        bgcolor: '#fff',
+        color: 'primary.contrastText',
+        '&:hover': {
+          transform: 'scale(1.1)',
         },
-        "@keyframes grow": {
+        '@keyframes grow': {
           from: {
             opacity: 0,
             scale: 0,
@@ -38,7 +38,7 @@ const SkillChip = (props: SkillChipProps) => {
           },
         },
         animation: `${
-          doAnimate ? `.5s ${props.idx * 100}ms grow forwards` : ""
+          doAnimate ? `.5s ${props.idx * 100}ms grow forwards` : ''
         }`,
       }}
     />

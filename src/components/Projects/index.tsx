@@ -1,19 +1,19 @@
-import { Box } from "@mui/material";
+import { Box } from '@mui/material';
 
-import { Project } from "../../types";
-import Section from "../Layouts/Section";
-import { projects } from "./../../data";
-import ProjectCard from "./ProjectCard";
+import { Project } from '../../types';
+import Section from '../Layouts/Section';
+import { projects } from './../../data';
+import ProjectCard from './ProjectCard';
 
 export default function index() {
   return (
     <Section title="PROJECTS" id="projects">
       <Box
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: "1rem",
-          justifyContent: { xs: "center", md: "space-between" },
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '1rem',
+          justifyContent: { xs: 'center', md: 'space-between' },
         }}
       >
         {projects.map((el: Project, idx: number) => (

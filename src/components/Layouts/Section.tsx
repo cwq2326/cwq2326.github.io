@@ -1,7 +1,7 @@
-import { Box, Typography } from "@mui/material";
-import React, { ReactNode } from "react";
+import { Box, Typography } from '@mui/material';
+import React, { ReactNode } from 'react';
 
-import UseScrollIntoView from "../../hooks/UseScrollIntoView";
+import UseScrollIntoView from '../../hooks/UseScrollIntoView';
 
 type SectionProps = {
   id?: string;
@@ -17,19 +17,19 @@ export default function Section(props: SectionProps) {
     <Box
       id={props.id}
       sx={{
-        scrollMarginTop: { xs: "6rem", sm: "7rem" },
-        display: "flex",
-        flexDirection: "column",
+        scrollMarginTop: { xs: '6rem', sm: '7rem' },
+        display: 'flex',
+        flexDirection: 'column',
         width: {
-          xs: "20rem",
-          sm: "60%",
-          md: "70%",
-          lg: "65rem",
+          xs: '20rem',
+          sm: '60%',
+          md: '70%',
+          lg: '65rem',
         },
         my: {
-          xs: "2rem",
-          md: "3rem",
-          lg: "4rem",
+          xs: '2rem',
+          md: '3rem',
+          lg: '4rem',
         },
       }}
     >
@@ -37,23 +37,23 @@ export default function Section(props: SectionProps) {
         ref={sectionTitleRef}
         variant="h1"
         sx={{
-          fontSize: { xs: "2rem", md: "3rem" },
-          mx: "auto",
-          marginBottom: { xs: "2rem", md: "3rem" },
-          paddingBottom: { xs: ".5rem", md: "1rem" },
-          borderBottom: "solid black .1rem",
+          fontSize: { xs: '2rem', md: '3rem' },
+          mx: 'auto',
+          marginBottom: { xs: '2rem', md: '3rem' },
+          paddingBottom: { xs: '.5rem', md: '1rem' },
+          borderBottom: 'solid black .1rem',
           opacity: 0,
-          "@keyframes slideUp": {
+          '@keyframes slideUp': {
             from: {
               opacity: 0,
-              transform: "translateY(100%)",
+              transform: 'translateY(100%)',
             },
             to: {
               opacity: 1,
-              transform: "translateY(0)",
+              transform: 'translateY(0)',
             },
           },
-          animation: `${doAnimate ? "slideUp 1s forwards" : ""}`,
+          animation: `${doAnimate ? 'slideUp 1s forwards' : ''}`,
         }}
       >
         {props.title.toUpperCase()}

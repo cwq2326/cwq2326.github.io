@@ -23,7 +23,7 @@
   width: 5rem;
   height: 0.25rem;
   display: block;
-  content: "";
+  content: '';
   left: 50%;
   top: calc(50% - 0.125rem);
   z-index: 1;
@@ -35,7 +35,7 @@
   width: 5rem;
   height: 0.25rem;
   display: block;
-  content: "";
+  content: '';
   left: 100%;
   top: calc(50% - 0.125rem);
   z-index: 1;
@@ -47,7 +47,7 @@
   width: 5rem;
   height: 0.25rem;
   display: block;
-  content: "";
+  content: '';
   right: 50%;
   top: calc(50% - 0.125rem);
   z-index: 1;
