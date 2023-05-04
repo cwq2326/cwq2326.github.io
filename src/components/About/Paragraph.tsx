@@ -1,26 +1,10 @@
 import React from "react";
 import { Typography } from "@mui/material";
+import UseScrollIntoView from "../../hooks/UseScrollIntoView";
 
 export default function Paragraph(props: any) {
     const paragraphRef = React.useRef(null);
-    const [doAnimate, setDoAnimate] = React.useState<boolean>(false);
-  
-    const callbackFunction = (entries: any) => {
-      const [entry] = entries;
-      if (entry.isIntersecting) setDoAnimate(true);
-    };
-  
-    const options = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 1.0,
-    };
-  
-    React.useEffect(() => {
-      const observer = new IntersectionObserver(callbackFunction, options);
-      if (paragraphRef.current) observer.observe(paragraphRef.current);
-    }, []);
-
+    let doAnimate = UseScrollIntoView(paragraphRef);
     
   return (
     <React.Fragment>

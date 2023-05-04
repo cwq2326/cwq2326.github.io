@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import Section from "../layout/Section";
 import { introduction } from "./../../data";
 import Paragraph from "./Paragraph";

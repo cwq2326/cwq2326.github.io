@@ -1,6 +1,5 @@
 import { Box, Divider, Typography } from "@mui/material";
 import WavingHandIcon from "@mui/icons-material/WavingHand";
-import { Rotate90DegreesCcw } from "@mui/icons-material";
 
 export default function index() {
   return (

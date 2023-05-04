@@ -1,6 +1,6 @@
 import { Avatar, Chip } from "@mui/material";
 import React from "react";
-
+import UseScrollIntoView from "../../hooks/UseScrollIntoView";
 type SkillChipProps = {
   name: string;
   icon?: string;
@@ -9,23 +9,7 @@ type SkillChipProps = {
 
 const SkillChip = (props: SkillChipProps) => {
   const chipRef = React.useRef(null);
-  const [doAnimate, setDoAnimate] = React.useState<boolean>(false);
-
-  const callbackFunction = (entries: any) => {
-    const [entry] = entries;
-    if (entry.isIntersecting) setDoAnimate(true);
-  };
-
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 1.0,
-  };
-
-  React.useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, options);
-    if (chipRef.current) observer.observe(chipRef.current);
-  }, []);
+ let doAnimate = UseScrollIntoView(chipRef) 
   
   return (
     <Chip

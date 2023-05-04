@@ -3,7 +3,6 @@ import {
   Divider,
   ThemeProvider,
   createTheme,
-  responsiveFontSizes,
 } from "@mui/material";
 import NavBar from "./components/layout/NavBar";
 import FloatingButtons from "./components/layout/FloatingButtons";
