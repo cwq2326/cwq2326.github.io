@@ -19,8 +19,10 @@ const SkillTab = (props: SkillTabProps) => {
           xs: 'column',
           md: 'row',
         },
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: {
+          xs: 'flex-start',
+          md: 'center',
+        },
       }}
     >
       <Typography
@@ -30,6 +32,7 @@ const SkillTab = (props: SkillTabProps) => {
           width: { md: '6rem' },
           fontSize: { xs: '1.2rem', md: '1.1rem' },
           paddingBottom: { xs: '1rem', md: '0' },
+          mx: 'auto'
         }}
       >
         {props.name}
