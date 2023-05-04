@@ -26,9 +26,12 @@ export default function Footer() {
       <Box>
         <Typography variant="subtitle1"
         sx={{
-          fontSize: ".5rem"
+          fontSize: {
+            xs: ".6rem",
+            sm: ".8rem",
+          }
         }}
-        >Designed and built by Chua Wen Quan</Typography>
+        >Designed and Built by Chua Wen Quan</Typography>
       </Box>
     </Box>
   );

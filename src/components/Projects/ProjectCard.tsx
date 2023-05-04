@@ -66,7 +66,11 @@ export default function ProjectCard(props: ProjectCardProps) {
         <Typography
           variant="h3"
           sx={{
-            fontSize: "1.2rem",
+            fontSize: {
+              xs: "1.2rem",
+              md: "1.25rem",
+              lg: "1.4rem"
+            }
           }}
         >
           {props.name}
