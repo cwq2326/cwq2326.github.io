@@ -9,7 +9,7 @@ import { Project, Skills, Social } from './types';
 const introduction: string[] = [
   'Welcome to my website! My name is Wen Quan, and I am currently a penultimate Computer Science undergraduate at the National University of Singapore (NUS). I am expecting to graduate in December 2023. I am interested in the field of software engineering, particularly in application development, and have also chosen it as my degree focus area. I aspire to become a full stack developer after graduation, focusing on building robust and scalable applications.',
   'Previously, I graduated with a diploma in Applied Chemistry from Singapore Polytechnic, and I decided to pivot into the field of Computer Science because I was curious about how computers work and how they can be used to solve real-world issues. I also love the idea of building software and watching it come to life, creating something that can potentially make a positive impact on society.',
-  'I am always eager to learn new technologies and improve my knowledge in the field of software engineering. Once again, thank you for visiting my website!',
+  'I am always eager to learn new technologies and improve my knowledge in the field of software engineering.',
 ];
 
 // ========================================================
@@ -172,7 +172,7 @@ const skills: Skills = {
     },
     {
       name: 'Vite',
-      icon: '/vite.svg'
+      icon: '/vite.svg',
     },
   ],
   cloud: [

@@ -43,12 +43,8 @@ export default function NavBar() {
               position: { xs: 'absolute', sm: 'static' },
             }}
           >
-            <Link
-            color="inherit"
-            underline="none"
-            href="#"
-            >
-            Wen Quan
+            <Link color="inherit" underline="none" href="#">
+              Wen Quan
             </Link>
           </Typography>
           <Stack

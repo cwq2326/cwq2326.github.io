@@ -32,7 +32,7 @@ const SkillTab = (props: SkillTabProps) => {
           width: { md: '6rem' },
           fontSize: { xs: '1.2rem', md: '1.1rem' },
           paddingBottom: { xs: '1rem', md: '0' },
-          mx: 'auto'
+          mx: 'auto',
         }}
       >
         {props.name}
