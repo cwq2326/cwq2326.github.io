@@ -36,7 +36,7 @@ const projects: Project[] = [
     date: 'Apr 2023 - Apr 2023',
   },
   {
-    name: 'Teacher/ Student API',
+    name: 'Teacher API',
     shortDescription: 'RESTful API Backend',
     description:
       'This is a RESTful API server backend developed via test-driven development (TDD) approach. It also consists of unit testing for endpoints using Golang’s built in testing package and continuous integration via GitHub Actions.',
@@ -151,6 +151,10 @@ const skills: Skills = {
     {
       name: 'Nodejs',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+    },
+    {
+      name: 'Spring Boot (learning in progress)',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg',
     },
   ],
   tools: [
