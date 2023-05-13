@@ -103,7 +103,7 @@ export default function index() {
               pr: '1rem',
             }}
           >
-            I'm
+            I&apos;m
           </Typography>
           Wen Quan
         </Typography>
@@ -134,7 +134,7 @@ export default function index() {
               },
             }}
           >
-            I'm an aspiring Full Stack Developer
+            I&apos;m an aspiring Full Stack Developer
           </Typography>
         </Divider>
       </Box>

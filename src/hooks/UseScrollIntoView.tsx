@@ -5,9 +5,11 @@ export default function UseScrollIntoView(
 ): boolean {
   const [doAnimation, setDoAnimation] = React.useState<boolean>(false);
 
-  const callbackFunction = (entries: any) => {
+  const callbackFunction = (entries: IntersectionObserverEntry[]) => {
     const [entry] = entries;
-    if (entry.isIntersecting) setDoAnimation(true);
+    if (entry.isIntersecting) {
+      setDoAnimation(true);
+    }
   };
 
   const options = {
@@ -18,7 +20,9 @@ export default function UseScrollIntoView(
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(callbackFunction, options);
-    if (elementRef.current) observer.observe(elementRef.current);
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
   });
 
   return doAnimation;

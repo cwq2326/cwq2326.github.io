@@ -1,4 +1,5 @@
 import { Card, Divider } from '@mui/material';
+import React from 'react';
 
 import Section from '../Layouts/Section';
 import { skills } from './../../data';

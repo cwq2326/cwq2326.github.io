@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
+import React from 'react';
 
 type BasicModalProps = {
   isOpen: boolean;
@@ -12,13 +13,15 @@ export default function BasicModal(props: BasicModalProps) {
     <div>
       <Modal
         open={props.isOpen}
-        onClose={() => props.setIsMenuOpen(false)}
+        onClose={() => {
+          props.setIsMenuOpen(false);
+        }}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box
           sx={{
-            position: 'absolute' as 'absolute',
+            position: 'absolute' as const,
             top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',

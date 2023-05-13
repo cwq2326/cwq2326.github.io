@@ -1,14 +1,15 @@
 import { Box, FormControl, TextField } from '@mui/material';
+import React from 'react';
 
 import Section from '../Layouts/Section';
 
 // Customised styling for Form components.
 const formControlStyle = {
-  // label when focused
+  // Label when focused
   '& .MuiFormLabel-root.Mui-focused': {
     color: '#d99058',
   },
-  // label when not focused
+  // Label when not focused
   '& .MuiInputLabel-outlined': {
     color: '#2d3032',
   },

@@ -13,9 +13,7 @@ import Section from '../Layouts/Section';
 export default function HorizontalNonLinearStepper() {
   const [activeStep, setActiveStep] = React.useState<number>(0);
   const [width, setWidth] = React.useState<number>(window.innerWidth);
-  const [completed] = React.useState<{
-    [k: number]: boolean;
-  }>({});
+  const [completed] = React.useState<Record<number, boolean>>({});
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
 
   React.useEffect(() => {
@@ -25,7 +23,9 @@ export default function HorizontalNonLinearStepper() {
       }
     });
 
-    return () => {};
+    return () => {
+      // do nothing.
+    };
   }, []);
 
   const handleStep = (step: number) => () => {

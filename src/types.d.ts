@@ -1,52 +1,52 @@
-interface Experiences {
+type Experiences = {
   company: string;
   title: string;
   start: Date;
   end: Date | 'Present';
   description: string;
   icon?: string;
-}
+};
 
-interface Project {
+type Project = {
   name: string;
   shortDescription: string;
   description: string;
   techStack: string[];
   repo: string;
   date: string;
-}
+};
 
-interface Skills {
-  programmingLanguages: {
+type Skills = {
+  programmingLanguages: Array<{
     name: string;
     icon: string;
-  }[];
-  frontEnd: {
+  }>;
+  frontEnd: Array<{
     name: string;
     icon: string;
-  }[];
-  backEnd: {
+  }>;
+  backEnd: Array<{
     name: string;
     icon: string;
-  }[];
-  tools: {
+  }>;
+  tools: Array<{
     name: string;
     icon: string;
-  }[];
-  cloud: {
+  }>;
+  cloud: Array<{
     name: string;
     icon: string;
-  }[];
-  database: {
+  }>;
+  database: Array<{
     name: string;
     icon: string;
-  }[];
-}
+  }>;
+};
 
-interface Social {
+type Social = {
   name: string;
   icon: string;
   link: string;
-}
+};
 
-export { Experiences, Project, Skills, Social };
+export type { Experiences, Project, Skills, Social };

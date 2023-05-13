@@ -21,7 +21,9 @@ export default function NavBar() {
       }
     });
 
-    return () => {};
+    return () => {
+      // do nothing.
+    };
   }, []);
 
   function handleClick(id: string) {
@@ -100,7 +102,9 @@ export default function NavBar() {
           </Stack>
           {width <= 576 && (
             <MenuIcon
-              onClick={() => setIsMenuOpen(true)}
+              onClick={() => {
+                setIsMenuOpen(true);
+              }}
               sx={{ cursor: 'pointer' }}
             />
           )}

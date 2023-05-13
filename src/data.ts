@@ -1,4 +1,9 @@
-import { Experiences, Project, Skills, Social } from './types';
+import {
+  type Experiences,
+  type Project,
+  type Skills,
+  type Social,
+} from './types';
 
 // This file contains data to be used for various sections.
 

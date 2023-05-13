@@ -11,7 +11,7 @@ type SkillChipProps = {
 
 const SkillChip = (props: SkillChipProps) => {
   const chipRef = React.useRef<HTMLDivElement | null>(null);
-  let doAnimate = UseScrollIntoView(chipRef);
+  const doAnimate = UseScrollIntoView(chipRef);
 
   return (
     <Chip

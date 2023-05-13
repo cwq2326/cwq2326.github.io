@@ -11,7 +11,7 @@ import {
 import React from 'react';
 
 import UseScrollIntoView from '../../hooks/UseScrollIntoView';
-import { Project } from '../../types';
+import { type Project } from '../../types';
 
 type ProjectCardProps = {
   idx: number;
@@ -19,7 +19,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard(props: ProjectCardProps) {
   const cardRef = React.useRef<HTMLDivElement | null>(null);
-  let doAnimate = UseScrollIntoView(cardRef);
+  const doAnimate = UseScrollIntoView(cardRef);
 
   return (
     <Card
@@ -50,7 +50,7 @@ export default function ProjectCard(props: ProjectCardProps) {
           },
         },
         animation: {
-          xs: `${doAnimate ? `.5s grow forwards ` : ''}`,
+          xs: `${doAnimate ? '.5s grow forwards ' : ''}`,
           md: `${
             doAnimate ? `.5s ${(props.idx % 2) * 100}ms grow forwards ` : ''
           }`,

@@ -1,6 +1,7 @@
 import { Box } from '@mui/material';
+import React from 'react';
 
-import { Project } from '../../types';
+import { type Project } from '../../types';
 import Section from '../Layouts/Section';
 import { projects } from './../../data';
 import ProjectCard from './ProjectCard';

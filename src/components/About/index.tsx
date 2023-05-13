@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Section from '../Layouts/Section';
 import { introduction } from './../../data';
 import Paragraph from './Paragraph';

@@ -11,7 +11,7 @@ type ParagraphProps = {
 
 export default function Paragraph(props: ParagraphProps) {
   const paragraphRef = React.useRef<HTMLDivElement | null>(null);
-  let doAnimate = UseScrollIntoView(paragraphRef);
+  const doAnimate = UseScrollIntoView(paragraphRef);
 
   return (
     <React.Fragment>
@@ -35,7 +35,7 @@ export default function Paragraph(props: ParagraphProps) {
               opacity: 1,
             },
           },
-          animation: `${doAnimate ? `.5s .5s slideUp forwards` : ''}`,
+          animation: `${doAnimate ? '.5s .5s slideUp forwards' : ''}`,
         }}
       >
         {props.text}

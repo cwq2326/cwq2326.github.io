@@ -1,4 +1,5 @@
 import { Box, Divider, ThemeProvider, createTheme } from '@mui/material';
+import React from 'react';
 
 import About from './components/About/index';
 import Experiences from './components/Experiences/index';
@@ -9,7 +10,7 @@ import NavBar from './components/Layouts/NavBar';
 import Projects from './components/Projects';
 import Skills from './components/Skills/index';
 
-let theme = createTheme({
+const theme = createTheme({
   typography: {
     fontFamily: ['Montserrat', 'sans-serif'].join(','),
   },
@@ -37,10 +38,10 @@ let theme = createTheme({
 });
 
 const sections: JSX.Element[] = [
-  <About />,
-  <Experiences />,
-  <Projects />,
-  <Skills />,
+  <About key="about" />,
+  <Experiences key="experiences" />,
+  <Projects key="projects" />,
+  <Skills key="skills" />,
 ];
 
 function App() {
@@ -61,19 +62,14 @@ function App() {
             py: '1rem',
           }}
         >
-          {sections.map((el: JSX.Element, index: number) => {
-            return (
-              <>
-                {el}
-                {index < sections.length - 1 && (
-                  <Divider
-                    flexItem
-                    sx={{ width: '80%', alignSelf: 'center' }}
-                  />
-                )}
-              </>
-            );
-          })}
+          {sections.map((el: JSX.Element, index: number) => (
+            <>
+              {el}
+              {index < sections.length - 1 && (
+                <Divider flexItem sx={{ width: '80%', alignSelf: 'center' }} />
+              )}
+            </>
+          ))}
         </Box>
         <Footer />
       </div>
