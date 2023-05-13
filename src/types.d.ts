@@ -1,3 +1,12 @@
+interface Experiences {
+  company: string;
+  title: string;
+  start: Date;
+  end: Date | 'Present';
+  description: string;
+  icon?: string;
+}
+
 interface Project {
   name: string;
   shortDescription: string;
@@ -40,4 +49,4 @@ interface Social {
   link: string;
 }
 
-export { Project, Skills, Social };
+export { Experiences, Project, Skills, Social };

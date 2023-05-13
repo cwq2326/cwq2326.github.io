@@ -8,11 +8,11 @@ import React from 'react';
 
 import BasicModal from './BasicModal';
 
-const navigations = ['About Me', 'Projects', 'Skills'];
+const navigations = ['About', 'Experiences', 'Projects', 'Skills'];
 
 export default function NavBar() {
   const [width, setWidth] = React.useState<number>(window.innerWidth);
-  const [isMenuOpen, setisMenuOpen] = React.useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     window.addEventListener('resize', (e) => {
@@ -24,9 +24,26 @@ export default function NavBar() {
     return () => {};
   }, []);
 
+  function handleClick(id: string) {
+    setIsMenuOpen(false);
+    window.location.href = id;
+  }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <BasicModal isOpen={isMenuOpen} setIsMenuOpen={setisMenuOpen} />
+      <BasicModal isOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}>
+        <Stack spacing={2} divider={<Divider flexItem />} alignItems={'center'}>
+          <Typography onClick={handleClick.bind(null, '#aboutme')}>
+            About
+          </Typography>
+          <Typography onClick={handleClick.bind(null, '#projects')}>
+            Projects
+          </Typography>
+          <Typography onClick={handleClick.bind(null, '#skills')}>
+            Skills
+          </Typography>
+        </Stack>
+      </BasicModal>
       <AppBar position="fixed" sx={{ bgcolor: 'primary.main' }}>
         <Toolbar
           sx={{
@@ -39,7 +56,7 @@ export default function NavBar() {
             sx={{
               ml: '1rem',
               flexGrow: 1,
-              fontSize: { xs: '1.5rem', sm: '2rem' },
+              fontSize: { xs: '1.5rem', md: '2rem' },
               position: { xs: 'absolute', sm: 'static' },
             }}
           >
@@ -61,7 +78,16 @@ export default function NavBar() {
           >
             {width > 576 &&
               navigations.map((el: string, idx: number) => (
-                <Typography sx={{ fontSize: '1.2rem' }} key={idx}>
+                <Typography
+                  sx={{
+                    fontSize: {
+                      sm: '1rem',
+                      md: '1.2rem',
+                      lg: '1.4rem',
+                    },
+                  }}
+                  key={idx}
+                >
                   <Link
                     color="inherit"
                     underline="hover"
@@ -72,7 +98,12 @@ export default function NavBar() {
                 </Typography>
               ))}
           </Stack>
-          {width <= 576 && <MenuIcon onClick={() => setisMenuOpen(true)} />}
+          {width <= 576 && (
+            <MenuIcon
+              onClick={() => setIsMenuOpen(true)}
+              sx={{ cursor: 'pointer' }}
+            />
+          )}
         </Toolbar>
       </AppBar>
     </Box>

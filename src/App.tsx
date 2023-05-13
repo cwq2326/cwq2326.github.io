@@ -1,6 +1,7 @@
 import { Box, Divider, ThemeProvider, createTheme } from '@mui/material';
 
 import About from './components/About/index';
+import Experiences from './components/Experiences/index';
 import Hero from './components/Hero';
 import FloatingButtons from './components/Layouts/FloatingButtons';
 import Footer from './components/Layouts/Footer';
@@ -35,6 +36,13 @@ let theme = createTheme({
   },
 });
 
+const sections: JSX.Element[] = [
+  <About />,
+  <Experiences />,
+  <Projects />,
+  <Skills />,
+];
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
@@ -53,11 +61,19 @@ function App() {
             py: '1rem',
           }}
         >
-          <About />
-          <Divider flexItem sx={{ width: '80%', alignSelf: 'center' }} />
-          <Projects />
-          <Divider flexItem sx={{ width: '80%', alignSelf: 'center' }} />
-          <Skills />
+          {sections.map((el: JSX.Element, index: number) => {
+            return (
+              <>
+                {el}
+                {index < sections.length - 1 && (
+                  <Divider
+                    flexItem
+                    sx={{ width: '80%', alignSelf: 'center' }}
+                  />
+                )}
+              </>
+            );
+          })}
         </Box>
         <Footer />
       </div>

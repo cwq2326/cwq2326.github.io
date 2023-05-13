@@ -1,4 +1,4 @@
-import { Project, Skills, Social } from './types';
+import { Experiences, Project, Skills, Social } from './types';
 
 // This file contains data to be used for various sections.
 
@@ -10,6 +10,36 @@ const introduction: string[] = [
   'Welcome to my website! My name is Wen Quan, and I am currently a penultimate Computer Science undergraduate at the National University of Singapore (NUS). I am expecting to graduate in December 2023. I am interested in the field of software engineering, particularly in application development, and have also chosen it as my degree focus area. I aspire to become a full stack developer after graduation, focusing on building robust and scalable applications.',
   'Previously, I graduated with a diploma in Applied Chemistry from Singapore Polytechnic, and I decided to pivot into the field of Computer Science because I was curious about how computers work and how they can be used to solve real-world issues. I also love the idea of building software and watching it come to life, creating something that can potentially make a positive impact on society.',
   'I am always eager to learn new technologies and improve my knowledge in the field of software engineering.',
+];
+
+// ========================================================
+//                      Experiences Section
+// ========================================================
+const experiences: Experiences[] = [
+  {
+    company: 'Ground Labs',
+    title: 'Software Development Engineer Intern',
+    start: new Date(2022, 4),
+    end: new Date(2022, 6),
+    description:
+      "I interned at Ground Labs as a software development engineer intern for 3 months under the engineering team. I worked on the company's proprietary product, Enterprise Recon, a PII scanning tool using C++. I also got to work on the cloud version of it called Cloud Recon where I got the chance to led migration efforts from Docker Swarm to Kubernetes as the ochestration tool.",
+  },
+  {
+    company: 'National University of Singapore',
+    title: 'Teaching Assistant',
+    start: new Date(2022, 7),
+    end: new Date(2023, 5),
+    description:
+      "I was a teaching assistant at the National University of Singapore for 2 academic semesters, teaching two modules - software engineering and computer organisation. I delivered tutorials and lab sessions, graded student's assignment and answered queries.",
+  },
+  {
+    company: 'DBS Bank',
+    title: 'Software Engineer Intern',
+    start: new Date(2023, 4),
+    end: 'Present',
+    description:
+      'I am currently interning at DBS Bank as a software engineer intern under the Cloud Engineering & Services department, Developer Experience team. I am a currently working on a new application that aims to provide an interface for developers at DBS for remote access to tools.',
+  },
 ];
 
 // ========================================================
@@ -218,4 +248,4 @@ const socials: Social[] = [
   },
 ];
 
-export { introduction, projects, skills, socials };
+export { introduction, experiences, projects, skills, socials };

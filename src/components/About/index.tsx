@@ -4,7 +4,7 @@ import Paragraph from './Paragraph';
 
 export default function index() {
   return (
-    <Section title="ABOUT ME" id="aboutme">
+    <Section title="ABOUT ME" id="about">
       {introduction.map((el: string, idx: number) => (
         <Paragraph
           key={idx}
