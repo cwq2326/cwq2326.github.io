@@ -1,5 +1,4 @@
 import { Avatar, Box, IconButton, Typography } from '@mui/material';
-import React from 'react';
 
 import { socials } from '../../data';
 

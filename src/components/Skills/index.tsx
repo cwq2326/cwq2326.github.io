@@ -1,11 +1,10 @@
 import { Card, Divider } from '@mui/material';
-import React from 'react';
 
 import Section from '../Layouts/Section';
 import { skills } from './../../data';
 import SkillTab from './SkillTab';
 
-export default function index() {
+export default function Index() {
   return (
     <Section title="SKILLS" id="skills">
       <Card

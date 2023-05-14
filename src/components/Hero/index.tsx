@@ -1,7 +1,7 @@
 import WavingHandIcon from '@mui/icons-material/WavingHand';
 import { Box, Divider, Typography } from '@mui/material';
 
-export default function index() {
+export default function Index() {
   return (
     <Box
       sx={{

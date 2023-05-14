@@ -1,12 +1,11 @@
 import { Box } from '@mui/material';
-import React from 'react';
 
 import { type Project } from '../../types';
 import Section from '../Layouts/Section';
 import { projects } from './../../data';
 import ProjectCard from './ProjectCard';
 
-export default function index() {
+export default function Index() {
   return (
     <Section title="PROJECTS" id="projects">
       <Box

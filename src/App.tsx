@@ -1,5 +1,4 @@
 import { Box, Divider, ThemeProvider, createTheme } from '@mui/material';
-import React from 'react';
 
 import About from './components/About/index';
 import Experiences from './components/Experiences/index';

@@ -4,44 +4,36 @@ import Step from '@mui/material/Step';
 import StepButton from '@mui/material/StepButton';
 import Stepper from '@mui/material/Stepper';
 import Typography from '@mui/material/Typography';
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import React from 'react';
 
 import { experiences } from '../../data';
 import BasicModal from '../Layouts/BasicModal';
 import Section from '../Layouts/Section';
 
-export default function HorizontalNonLinearStepper() {
+export default function Index() {
+  const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState<number>(0);
-  const [width, setWidth] = React.useState<number>(window.innerWidth);
   const [completed] = React.useState<Record<number, boolean>>({});
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
-
-  React.useEffect(() => {
-    window.addEventListener('resize', (e) => {
-      if (e.target instanceof Window) {
-        setWidth(e.target.window.innerWidth);
-      }
-    });
-
-    return () => {
-      // do nothing.
-    };
-  }, []);
+  const isModalOpen = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleStep = (step: number) => () => {
     setActiveStep(step);
-    if (width < 768) {
-      setIsMenuOpen(true);
-    }
+    console.log(isModalOpen);
+    isModalOpen && setIsMenuOpen(true);
   };
 
   return (
     <Section title="EXPERIENCES" id="experiences">
-      <BasicModal isOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}>
-        <Typography variant="body1">
-          {experiences[activeStep].description}
-        </Typography>
-      </BasicModal>
+      {isModalOpen && (
+        <BasicModal isOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen}>
+          <Typography variant="body1">
+            {experiences[activeStep].description}
+          </Typography>
+        </BasicModal>
+      )}
       <Box sx={{ width: '100%' }}>
         <Stepper
           nonLinear
@@ -80,7 +72,7 @@ export default function HorizontalNonLinearStepper() {
               }`}</Typography>
                 </Stack>
               </StepButton>
-              {width < 768 && index < experiences.length - 1 && (
+              {index < experiences.length - 1 && (
                 <Box
                   sx={{
                     height: '2rem',
@@ -88,20 +80,29 @@ export default function HorizontalNonLinearStepper() {
                     bgcolor: '#ccc',
                     mx: 'auto',
                     mt: '1rem',
+                    display: {
+                      xs: 'block',
+                      md: 'none',
+                    },
                   }}
                 ></Box>
               )}
             </Step>
           ))}
         </Stepper>
-        {width >= 768 && (
-          <Typography
-            variant="body1"
-            sx={{ mt: 2, mb: 1, py: 1, textAlign: 'center' }}
-          >
-            {experiences[activeStep].description}
-          </Typography>
-        )}
+        <Typography
+          variant="body1"
+          sx={{
+            mt: '3rem',
+            textAlign: 'center',
+            display: {
+              xs: 'none',
+              md: 'block',
+            },
+          }}
+        >
+          {experiences[activeStep].description}
+        </Typography>
       </Box>
     </Section>
   );

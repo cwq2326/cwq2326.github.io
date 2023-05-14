@@ -11,23 +11,8 @@ import BasicModal from './BasicModal';
 const navigations = ['About', 'Experiences', 'Projects', 'Skills'];
 
 export default function NavBar() {
-  const [width, setWidth] = React.useState<number>(window.innerWidth);
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
-
-  React.useEffect(() => {
-    window.addEventListener('resize', (e) => {
-      if (e.target instanceof Window) {
-        setWidth(e.target.window.innerWidth);
-      }
-    });
-
-    return () => {
-      // do nothing.
-    };
-  }, []);
-
   function handleClick(id: string) {
-    setIsMenuOpen(false);
     window.location.href = id;
   }
 
@@ -46,6 +31,7 @@ export default function NavBar() {
           </Typography>
         </Stack>
       </BasicModal>
+
       <AppBar position="fixed" sx={{ bgcolor: 'primary.main' }}>
         <Toolbar
           sx={{
@@ -78,36 +64,40 @@ export default function NavBar() {
               />
             }
           >
-            {width > 576 &&
-              navigations.map((el: string, idx: number) => (
-                <Typography
-                  sx={{
-                    fontSize: {
-                      sm: '1rem',
-                      md: '1.2rem',
-                      lg: '1.4rem',
-                    },
-                  }}
-                  key={idx}
+            {navigations.map((el: string, idx: number) => (
+              <Typography
+                sx={{
+                  fontSize: {
+                    sm: '1rem',
+                    md: '1.2rem',
+                    lg: '1.4rem',
+                  },
+                  display: {
+                    xs: 'none',
+                    sm: 'inline-block',
+                  },
+                }}
+                key={idx}
+              >
+                <Link
+                  color="inherit"
+                  underline="hover"
+                  href={`#${el.split(' ').join('').toLowerCase()}`}
                 >
-                  <Link
-                    color="inherit"
-                    underline="hover"
-                    href={`#${el.split(' ').join('').toLowerCase()}`}
-                  >
-                    {el}
-                  </Link>
-                </Typography>
-              ))}
+                  {el}
+                </Link>
+              </Typography>
+            ))}
           </Stack>
-          {width <= 576 && (
-            <MenuIcon
-              onClick={() => {
-                setIsMenuOpen(true);
-              }}
-              sx={{ cursor: 'pointer' }}
-            />
-          )}
+          <MenuIcon
+            onClick={setIsMenuOpen.bind(null, true)}
+            sx={{
+              display: {
+                xs: 'inline-block',
+                sm: 'none',
+              },
+            }}
+          />
         </Toolbar>
       </AppBar>
     </Box>
